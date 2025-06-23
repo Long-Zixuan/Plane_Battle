@@ -41,10 +41,6 @@ public class PlayerPlaneLogic : MonoBehaviour,IObjectInScene
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetMouseButtonDown(0))
-        {
-            Fire();
-        }*/
         Move();
     }
 
@@ -68,7 +64,7 @@ public class PlayerPlaneLogic : MonoBehaviour,IObjectInScene
     {
         if (Input.GetMouseButton(0) && canMove)
         {
-            Vector3 planePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 planePos = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
             if (planePos.x < -2.6f)
                 planePos.x = -2.6f;
             if (planePos.x >2.6f)
