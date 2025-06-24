@@ -41,6 +41,10 @@ public class PlayerPlaneLogic : MonoBehaviour,IObjectInScene
     // Update is called once per frame
     void Update()
     {
+        /*if (Input.GetMouseButtonDown(0))
+        {
+            Fire();
+        }*/
         Move();
     }
 
@@ -64,7 +68,7 @@ public class PlayerPlaneLogic : MonoBehaviour,IObjectInScene
     {
         if (Input.GetMouseButton(0) && canMove)
         {
-            Vector3 planePos = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
+            Vector3 planePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             if (planePos.x < -2.6f)
                 planePos.x = -2.6f;
             if (planePos.x >2.6f)
@@ -85,45 +89,37 @@ public class PlayerPlaneLogic : MonoBehaviour,IObjectInScene
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        print("col");
         if (other.gameObject.CompareTag("Enemy"))
         {
-            print("die");
             isDie_ = true;
-            GetComponent<PlaneAnimationLogic>().switchAniMachine("die");
+            GetComponent<PlaneAnimationLogic>().switchAniMachine("die",false);
         }
     }
     
     private void OnCollisionStay2D(Collision2D other)
     {
-        print("col");
         if (other.gameObject.CompareTag("Enemy"))
         {
-            print("die");
             isDie_ = true;
-            GetComponent<PlaneAnimationLogic>().switchAniMachine("die");
+            GetComponent<PlaneAnimationLogic>().switchAniMachine("die",false);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        print("Col");
         if (other.gameObject.CompareTag("Enemy"))
         {
-            print("die");
             isDie_ = true;
-            GetComponent<PlaneAnimationLogic>().switchAniMachine("die");
+            GetComponent<PlaneAnimationLogic>().switchAniMachine("die",false);
         }
     }
     
     private void OnTriggerStay(Collider other)
     {
-        print("Col");
         if (other.gameObject.CompareTag("Enemy"))
         {
-            print("die");
             isDie_ = true;
-            GetComponent<PlaneAnimationLogic>().switchAniMachine("die");
+            GetComponent<PlaneAnimationLogic>().switchAniMachine("die",false);
         }
     }
 }

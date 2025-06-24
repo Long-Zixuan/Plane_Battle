@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlaneAnimationLogic : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class PlaneAnimationLogic : MonoBehaviour
     public Sprite[] hitframe;
     
     Sprite[] frame = null;
+    
+    public string aniTag_ = "idle";
+    public bool loop_ = true;
 
     private Dictionary<string, Sprite[]> aniDic;
     
@@ -17,12 +21,12 @@ public class PlaneAnimationLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        frame = idleframe;
-        StartCoroutine(AnimationPlayLogic());
         aniDic = new Dictionary<string, Sprite[]>();
         aniDic.Add("idle", idleframe);
         aniDic.Add("die", dieframe);
         aniDic.Add("hit", hitframe);
+        frame = aniDic[aniTag_];
+        StartCoroutine(AnimationPlayLogic());
     }
 
     // Update is called once per frame
@@ -36,18 +40,29 @@ public class PlaneAnimationLogic : MonoBehaviour
         
         while (true)
         {
-            aniFramedir_ = aniFramedir_ % frame.Length;
+            if (loop_)
+            {
+                aniFramedir_ = aniFramedir_ % frame.Length;
+            }
+            else
+            {
+                if (aniFramedir_ >= frame.Length)
+                {
+                    aniFramedir_ = frame.Length - 1;
+                }
+            }
             GetComponent<SpriteRenderer>().sprite = frame[aniFramedir_];
             aniFramedir_++;
             yield return new WaitForSeconds(1 / animationPlaySpeed);
         }
     }
 
-    public void switchAniMachine(string tag)
+    public void switchAniMachine(string tag, bool loop = true)
     {
         try
         {
-            //aniFramedir_ = 0;
+            loop_ = loop;
+            aniFramedir_ = 0;
             frame = aniDic[tag];
         }
         catch (System.Exception e)

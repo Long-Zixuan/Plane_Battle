@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class UILogic : MonoBehaviour,IObjectInScene
 {
     public Text scoreText;
-   // public Text heighestScoreText;
+    public Text heighestScoreText;
 
     public GameObject dieUI;
 
@@ -19,8 +19,16 @@ public class UILogic : MonoBehaviour,IObjectInScene
     void Start()
     {
         GameManager.Instance.AddListener(this);
-       // heighestScore_ = PlayerPrefs.GetInt("heighestScore", 0);
-       // heighestScoreText.text = "最高分：" + heighestScore_.ToString();
+        try
+        {
+            heighestScore_ = PlayerPrefs.GetInt("heighestScore", 0);
+            heighestScoreText.text = "最高分：" + heighestScore_.ToString();
+        }
+        catch (System.Exception e)
+        {
+            print(e);
+        }
+
         adGameOver_ = GetComponent<AudioSource>();
     }
 
@@ -30,24 +38,24 @@ public class UILogic : MonoBehaviour,IObjectInScene
         scoreText.text = "得分："+GameManager.Instance.score.ToString();
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            //updateHeighestScore();
-            SceneManager.LoadScene("Start");
+            updateHeighestScore();
+            SceneManager.LoadScene("Scenes/Start");
         }
     }
 
-    /*void updateHeighestScore()
+    void updateHeighestScore()
     {
         if (GameManager.Instance.score > heighestScore_)
         {
             PlayerPrefs.SetInt("heighestScore", GameManager.Instance.score);
         }
-    }*/
+    }
 
     public void OnGameOver()
     {
         adGaming.Stop();
         adGameOver_.Play();
         dieUI.SetActive(true);
-        //updateHeighestScore();
+        updateHeighestScore();
     }
 }

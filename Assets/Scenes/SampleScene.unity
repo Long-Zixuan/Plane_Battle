@@ -934,7 +934,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &735939315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1123,6 +1123,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4eb0e59c066b2344bb19bf48f4143074, type: 3}
   hitframe:
   - {fileID: 21300000, guid: e343915dc54fb414db41860c99563e91, type: 3}
+  aniTag_: idle
+  loop_: 1
   animationPlaySpeed: 10
 --- !u!212 &959048210
 SpriteRenderer:
@@ -1585,6 +1587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1271162236}
+  heighestScoreText: {fileID: 735939315}
   dieUI: {fileID: 421231502}
   adGaming: {fileID: 519420033}
 --- !u!82 &1258167514
@@ -1734,7 +1737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
