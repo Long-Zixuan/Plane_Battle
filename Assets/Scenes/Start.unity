@@ -480,7 +480,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Version alpha2.0 \uFF08Mobile\uFF09"
+  m_Text: "Version alpha2.1 \uFF08Mobile\uFF09"
 --- !u!222 &735629989
 CanvasRenderer:
   m_ObjectHideFlags: 0
