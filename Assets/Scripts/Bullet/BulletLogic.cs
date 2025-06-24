@@ -30,9 +30,7 @@ public class BulletLogic : MonoBehaviour,IObjectInScene
         {
             try
             {
-                StartCoroutine(hitEnemyLogic(other.gameObject));
-                //other.gameObject.GetComponent<BaseEnemy>().Hit(1);
-                //other.gameObject.GetComponent<PlaneAnimationLogic>().switchAniMachine("hit");
+                other.gameObject.GetComponent<BaseEnemy>().Hit(1);
             }
             catch (Exception e)
             {
@@ -42,13 +40,7 @@ public class BulletLogic : MonoBehaviour,IObjectInScene
         Destroy(gameObject);
     }
 
-    IEnumerator hitEnemyLogic(GameObject obj)
-    {
-        obj.GetComponent<BaseEnemy>().Hit(1);
-        obj.GetComponent<PlaneAnimationLogic>().switchAniMachine("hit");
-        yield return new WaitForSeconds(0.2f);
-        obj.GetComponent<PlaneAnimationLogic>().switchAniMachine("idle");
-    }
+    
 
     public void OnGameOver()
     {

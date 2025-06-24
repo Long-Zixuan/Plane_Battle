@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1967178911
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f15af1a18ec21634fa8f68b1d639f8b9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -150,6 +150,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e471bcbac3a360a41a272cf801a49511, type: 3}
   hitframe:
   - {fileID: 21300000, guid: 288e000ad88b6084fa1e8783bff334cf, type: 3}
+  aniTag_: idle
+  loop_: 1
   animationPlaySpeed: 10
 --- !u!82 &-707571994916263940
 AudioSource:

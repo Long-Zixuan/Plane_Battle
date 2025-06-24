@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UILogic : MonoBehaviour,IObjectInScene
@@ -18,8 +19,16 @@ public class UILogic : MonoBehaviour,IObjectInScene
     void Start()
     {
         GameManager.Instance.AddListener(this);
-        heighestScore_ = PlayerPrefs.GetInt("heighestScore", 0);
-        heighestScoreText.text = "最高分：" + heighestScore_.ToString();
+        try
+        {
+            heighestScore_ = PlayerPrefs.GetInt("heighestScore", 0);
+            heighestScoreText.text = "最高分：" + heighestScore_.ToString();
+        }
+        catch (System.Exception e)
+        {
+            print(e);
+        }
+
         adGameOver_ = GetComponent<AudioSource>();
     }
 
@@ -30,7 +39,7 @@ public class UILogic : MonoBehaviour,IObjectInScene
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             updateHeighestScore();
-            Application.Quit();
+            SceneManager.LoadScene("Scenes/Start");
         }
     }
 

@@ -89,45 +89,37 @@ public class PlayerPlaneLogic : MonoBehaviour,IObjectInScene
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        print("col");
         if (other.gameObject.CompareTag("Enemy"))
         {
-            print("die");
             isDie_ = true;
-            GetComponent<PlaneAnimationLogic>().switchAniMachine("die");
+            GetComponent<PlaneAnimationLogic>().switchAniMachine("die",false);
         }
     }
     
     private void OnCollisionStay2D(Collision2D other)
     {
-        print("col");
         if (other.gameObject.CompareTag("Enemy"))
         {
-            print("die");
             isDie_ = true;
-            GetComponent<PlaneAnimationLogic>().switchAniMachine("die");
+            GetComponent<PlaneAnimationLogic>().switchAniMachine("die",false);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        print("Col");
         if (other.gameObject.CompareTag("Enemy"))
         {
-            print("die");
             isDie_ = true;
-            GetComponent<PlaneAnimationLogic>().switchAniMachine("die");
+            GetComponent<PlaneAnimationLogic>().switchAniMachine("die",false);
         }
     }
     
     private void OnTriggerStay(Collider other)
     {
-        print("Col");
         if (other.gameObject.CompareTag("Enemy"))
         {
-            print("die");
             isDie_ = true;
-            GetComponent<PlaneAnimationLogic>().switchAniMachine("die");
+            GetComponent<PlaneAnimationLogic>().switchAniMachine("die",false);
         }
     }
 }

@@ -1091,9 +1091,9 @@ GameObject:
   - component: {fileID: 959048210}
   - component: {fileID: 959048209}
   - component: {fileID: 959048212}
-  - component: {fileID: 959048213}
   - component: {fileID: 959048214}
   - component: {fileID: 959048215}
+  - component: {fileID: 959048216}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -1123,6 +1123,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4eb0e59c066b2344bb19bf48f4143074, type: 3}
   hitframe:
   - {fileID: 21300000, guid: e343915dc54fb414db41860c99563e91, type: 3}
+  aniTag_: idle
+  loop_: 1
   animationPlaySpeed: 10
 --- !u!212 &959048210
 SpriteRenderer:
@@ -1209,32 +1211,6 @@ MonoBehaviour:
   fireTime: 0.5
   bullet: {fileID: 2707105192318475136, guid: 30c6cc4969fc6af4792f65ede52e8cf2, type: 3}
   bulletSpeed: 5
---- !u!61 &959048213
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 959048208}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1.24}
-    newSize: {x: 1, y: 1.24}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1.24}
-  m_EdgeRadius: 0
 --- !u!50 &959048214
 Rigidbody2D:
   serializedVersion: 4
@@ -1352,6 +1328,88 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!60 &959048216
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959048208}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1.24}
+    newSize: {x: 1, y: 1.24}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.29, y: -0.48999998}
+      - {x: 0.26999998, y: -0.5}
+      - {x: 0.26999998, y: -0.53}
+      - {x: 0.29999998, y: -0.61}
+      - {x: 0.32, y: -0.62}
+      - {x: 0.35, y: -0.59999996}
+      - {x: 0.39, y: -0.53999996}
+      - {x: 0.39, y: -0.51}
+      - {x: 0.38, y: -0.48999998}
+    - - {x: -0.32, y: -0.59}
+      - {x: -0.29, y: -0.58}
+      - {x: -0.29, y: -0.55}
+      - {x: -0.32, y: -0.53999996}
+      - {x: -0.34, y: -0.56}
+    - - {x: -0.29999998, y: -0.53}
+      - {x: -0.26999998, y: -0.52}
+      - {x: -0.26999998, y: -0.48999998}
+      - {x: -0.29999998, y: -0.48}
+      - {x: -0.32, y: -0.5}
+    - - {x: 0.29, y: -0.35}
+      - {x: 0.26999998, y: -0.35999998}
+      - {x: 0.26999998, y: -0.47}
+      - {x: 0.28, y: -0.48999998}
+      - {x: 0.35, y: -0.48999998}
+      - {x: 0.38, y: -0.48}
+      - {x: 0.38, y: -0.37}
+      - {x: 0.37, y: -0.35}
+    - - {x: -0.35999998, y: -0.35999998}
+      - {x: -0.37, y: -0.38}
+      - {x: -0.37, y: -0.44}
+      - {x: -0.35, y: -0.48}
+      - {x: -0.28, y: -0.48}
+      - {x: -0.25, y: -0.47}
+      - {x: -0.25, y: -0.42}
+      - {x: -0.28, y: -0.38}
+      - {x: -0.32, y: -0.35999998}
+    - - {x: 0.32, y: -0.35}
+      - {x: 0.39999998, y: -0.32}
+      - {x: 0.5, y: -0.28}
+      - {x: 0.5, y: -0.07}
+      - {x: 0.35, y: 0.21}
+      - {x: 0.26999998, y: 0.17999999}
+      - {x: 0.26, y: 0.12}
+      - {x: 0.19999999, y: 0.24}
+      - {x: 0.14, y: 0.57}
+      - {x: 0.07, y: 0.62}
+      - {x: -0.01, y: 0.62}
+      - {x: -0.089999996, y: 0.58}
+      - {x: -0.14, y: 0.45}
+      - {x: -0.24, y: 0.14999999}
+      - {x: -0.29999998, y: 0.19999999}
+      - {x: -0.35, y: 0.19}
+      - {x: -0.39999998, y: 0.13}
+      - {x: -0.48999998, y: -0.14999999}
+      - {x: -0.5, y: -0.19}
+      - {x: -0.5, y: -0.26}
+      - {x: -0.37, y: -0.35}
 --- !u!1 &1152017891
 GameObject:
   m_ObjectHideFlags: 0
