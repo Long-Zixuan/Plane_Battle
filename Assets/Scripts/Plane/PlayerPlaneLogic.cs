@@ -69,14 +69,14 @@ public class PlayerPlaneLogic : MonoBehaviour,IObjectInScene
         if (Input.GetMouseButton(0) && canMove)
         {
             Vector3 planePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            if (planePos.x < -2.6f)
-                planePos.x = -2.6f;
-            if (planePos.x >2.6f)
-                planePos.x = 2.6f;
-            if (planePos.y>4.4f)
-                planePos.y = 4.4f;
-            if (planePos.y<-4.4f)
-                planePos.y =-4.4f;
+            if (planePos.x < GameManager.Instance.Left)
+                planePos.x = GameManager.Instance.Left;
+            if (planePos.x >GameManager.Instance.Right)
+                planePos.x = GameManager.Instance.Right;
+            if (planePos.y>GameManager.Instance.Top)
+                planePos.y = GameManager.Instance.Top;
+            if (planePos.y<GameManager.Instance.Botton)
+                planePos.y =GameManager.Instance.Botton;
             transform.position = new Vector3(planePos.x, planePos.y, 0);
         }
     }

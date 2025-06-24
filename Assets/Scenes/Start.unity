@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 484439471}
   - component: {fileID: 484439470}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 735629989}
   - component: {fileID: 735629988}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Version
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -480,7 +480,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Version\uFF1AAlpha2.0"
+  m_Text: "Version\uFF1AAlpha2.1"
 --- !u!222 &735629989
 CanvasRenderer:
   m_ObjectHideFlags: 0

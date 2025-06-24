@@ -33,7 +33,7 @@ public class EnemyFactory : MonoBehaviour,IObjectInScene
         {
             yield return new WaitForSeconds(genEnemyCreatTime);
             GameObject en = Instantiate(enemy[0]);
-            en.transform.position = new Vector3(Random.Range(-2.6f,2.6f), 5, 0);
+            en.transform.position = new Vector3(Random.Range(GameManager.Instance.Left,GameManager.Instance.Right), 5, 0);
         }
     }
     
